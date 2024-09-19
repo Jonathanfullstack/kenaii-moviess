@@ -33,9 +33,6 @@
 <h2>🚀 Rodando Localmente</h2>
 Para executar o projeto, siga-os passos abaixo:
 
-<h3>Clone o projeto</h3>
-<pre>git clone https://github.com/gabrielalencs/Kenai-Movies.git</pre>
-
 <h3>Instale as dependências</h3>
 <pre>npm install</pre>
 
@@ -49,5 +46,5 @@ Para executar o projeto, siga-os passos abaixo:
 <br>
 
 <div align="center">
-  <p>Desenvolvido com 🧡 por <b>Gabriel de Alencar</b></p>
+  <p>Desenvolvido por <b>Jonathan Vinicius</b></p>
 </div>
