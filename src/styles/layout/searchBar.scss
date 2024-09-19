@@ -1,0 +1,201 @@
+@use '../abstracts/colors' as color;
+@use '../abstracts/breakpoints' as media;
+
+.containerSearchBar {
+    margin-top: 3rem;
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+    cursor: pointer;
+
+    @include media.laptops {
+        margin-top: 0;
+    }
+
+    .mainBox {
+        box-sizing: border-box;
+        position: relative;
+        width: 80vw;
+        max-width: 37rem;
+        height: 5rem;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 1rem;
+        background-color: rgb(22, 20, 43);
+        transition: all 0.3s ease;
+        padding: 0 2rem;
+
+        @include media.laptops {
+            width: 35rem;
+        }
+    }
+
+    .inputCheckbox {
+        box-sizing: border-box;
+        width: 3rem;
+        height: 4.5rem;
+        position: absolute;
+        right: 1.7rem;
+        top: .2rem;
+        z-index: 9;
+        cursor: pointer;
+        appearance: none;
+    }
+
+    .searchInput {
+        box-sizing: border-box;
+        height: 100%;
+        width: 80%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding-bottom: .4rem;
+        padding-left: 1rem;
+        font-size: 1.6rem;
+        color: white;
+        transition: all 0.3s ease;
+        font-family: 'Open Sans', sans-serif;
+        -webkit-appearance: none;
+
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            display: none; 
+        }
+    }
+
+    .searchInput::placeholder {
+        color: rgba(255, 255, 255, 0.776);
+    }
+
+    .iconContainer {
+        box-sizing: border-box;
+        padding-top: .5rem;
+        width: fit-content;
+        transition: all 0.3s ease;
+    }
+
+    .searchIcon {
+        box-sizing: border-box;
+        fill: white;
+        font-size: 2.5rem;
+    }
+}
+
+// container search films
+
+.openSearchBar {
+    opacity: 100 !important;
+    height: 27rem !important;
+    pointer-events: all !important;
+    z-index: 10;
+}
+
+.containerSearchBarFilms {
+    border-top: 2px solid rgb(27, 25, 53);
+    background-color: rgb(22, 20, 43);
+    border-radius: 1rem;
+    position: absolute;
+    width: 100%;
+    padding: 2rem;
+    overflow-y: scroll;
+    height: 0;
+    opacity: 0;
+    transition: all .3s;
+    z-index: 10;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 1rem;
+        background-color: rgb(19, 17, 37);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: white;
+    }
+
+    .mainTitle {
+        font-size: 2rem;
+        color: white;
+        border-bottom: 2px solid rgb(29, 26, 49);
+        padding-bottom: 1.5rem;
+    }
+
+    .containerFilms {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .film {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+
+    .filmContent {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .filmTitle h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: color.$white;
+    }
+
+    .filmImage img {
+        width: 4rem;
+        border-radius: .5rem;
+    }
+
+    .releaseDate {
+        font-size: 1.4rem;
+        color: color.$white;
+        font-weight: 500;
+    }
+
+    .iconNoPoster {
+        font-size: 4rem;
+        color: color.$white;
+    }
+
+    .containerLoadingIcon {
+        height: 15rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loadingIcon {
+        font-size: 4rem;
+        color: color.$white;
+        animation: spin 1s linear infinite;
+    }
+
+    .movieNotFound {
+        color: color.$white;
+        font-size: 1.7rem;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
